@@ -8,7 +8,7 @@
     <!-- PAGE TITLE -->
     <title>{{ config('app.name') }}</title>
     <!-- FAVI ICON -->
-    <link rel="icon" type="image/png" href="{{ asset('home/demo.dueza.com/spicy-html/spicy/black-color') }}/assets/images/favi.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="{{ asset('admin/mophy.dexignzone.com/xhtml') }}/images/favicon.png" sizes="32x32">
     <!-- BOOTSTRAP CSS -->
     <link rel="stylesheet" href="{{ asset('home/demo.dueza.com/spicy-html/spicy/black-color') }}/assets/bootstrap/css/bootstrap.min.css">
     <!-- ALL GOOGLE FONTS -->
