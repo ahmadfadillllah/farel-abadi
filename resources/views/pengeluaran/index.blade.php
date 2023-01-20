@@ -24,6 +24,7 @@
                                         <th>Tanggal Keluar</th>
                                         <th>Nama Pembeli</th>
                                         <th>Status</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -45,6 +46,12 @@
                                             @elseif ($p->status == 'Dibatalkan')
                                             <span class="badge light badge-danger">{{ $p->status }}</span>
                                             @endif
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-primary shadow btn-xs sharp me-1" data-bs-toggle="modal" data-bs-target="#editNota{{ $p->id }}"><i class="fas fa-pencil-alt"></i></button>
+                                            @include('pengeluaran.modal.edit')
+                                            <button href="#" class="btn btn-danger shadow btn-xs sharp" data-bs-toggle="modal" data-bs-target="#destroyNota{{ $p->id }}"><i class="fas fa-trash-alt"></i></button>
+                                            @include('pengeluaran.modal.destroy')
                                         </td>
                                     </tr>
                                     @endforeach

@@ -79,13 +79,17 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                                    @if ($total > 1)
-                                    <button id="pay-button" type="submit" class="btn btn-rounded btn-primary"><span
-                                        class="btn-icon-start text-primary"><i class="fa fa-shopping-cart"></i>
-                                    </span>Bayar</button>
-                                    @endif
                             </div>
                         </div>
+                        @if ($total > 1)
+                        <button id="pay-button" type="submit" class="btn btn-rounded btn-primary"><span
+                            class="btn-icon-start text-primary"><i class="fa fa-shopping-cart"></i>
+                        </span>Bayar Non Tunai</button>
+                        <button  class="btn btn-rounded btn-info" data-bs-toggle="modal" data-bs-target="#tunaiPemesanan{{ $p->id }}"><span
+                            class="btn-icon-start text-info"><i class="fa fa-shopping-cart"></i>
+                        </span>Bayar Tunai</button>
+                        @include('pemesanan.modal.tunai')
+                        @endif
                     </div>
                 </div>
             </div>

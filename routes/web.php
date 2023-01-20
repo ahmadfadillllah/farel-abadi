@@ -49,12 +49,15 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function(){
 
     Route::get('/pengeluaran', [PengeluaranController::class, 'index'])->name('pengeluaran.index');
     Route::post('/pengeluaran/insert', [PengeluaranController::class, 'insert'])->name('pengeluaran.insert');
+    Route::post('/pengeluaran/update/{id}', [PengeluaranController::class, 'update'])->name('pengeluaran.update');
+    Route::get('/pengeluaran/destroy/{id}', [PengeluaranController::class, 'destroy'])->name('pengeluaran.destroy');
 
     Route::get('/pemesanan/{id}', [PemesananController::class, 'index'])->name('pemesanan.index');
     Route::get('/pemesanan/destroy/{id}', [PemesananController::class, 'destroy'])->name('pemesanan.destroy');
     Route::post('/pemesanan/insert', [PemesananController::class, 'insert'])->name('pemesanan.insert');
     Route::post('/pemesanan/success', [PemesananController::class, 'success'])->name('pemesanan.success');
     Route::post('/pemesanan/ditunda', [PemesananController::class, 'ditunda'])->name('pemesanan.ditunda');
+    Route::get('/pemesanan/tunai/{id}', [PemesananController::class, 'tunai'])->name('pemesanan.tunai');
 
     Route::get('/cetak_struk', [CetakStrukController::class, 'index'])->name('cetakstruk.index');
     Route::get('/cetak_struk/show/{id}', [CetakStrukController::class, 'show'])->name('cetakstruk.show');

@@ -129,6 +129,17 @@ class PemesananController extends Controller
         }
     }
 
+    public function tunai($id)
+    {
+        try {
+            Pengeluaran::where('id', $id)->update(['status' => 'Success']);
+
+            return redirect()->route('pengeluaran.index')->with('success', 'Pembayaran tunai telah berhasil');
+        } catch (\Throwable $th) {
+            return redirect()->route('pengeluaran.index')->with('info', $th->getMessage());
+        }
+    }
+
     public function destroy($id)
     {
         try {
