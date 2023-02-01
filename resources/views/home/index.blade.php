@@ -102,8 +102,7 @@
     </header>
     <!-- / END HOMEPAGE DESIGN AREA -->
 
-    <!-- START BLOG DESIGN AREA -->
-    <section id="blog" class="blog-area section-padding">
+    <section id="work" class="work section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
@@ -113,28 +112,36 @@
                 </div>
             </div>
             <div class="row">
-                <!-- START SINGLE BLOG DESIGN AREA -->
-                @foreach ($hasillaut as $hl)
-                <div class="col-md-4 wow fadeInUp single-blog-content" data-wow-delay=".2s">
-                    <div class="single-blog">
-                        <img src="assets/images/blog/blog1.jpg" alt="" class="img-responsive">
-                        <div class="blog-description text-center">
-                            <a><h4>{{ $hl->nama }}</h4></a>
-                            <img src="{{ asset('admin/mophy.dexignzone.com/xhtml/images/product') }}/{{ $hl->gambar }}" alt="">
-                            <p>{{ $hl->kategori->nama }}</p>
-                            <h6>Stok: {{ $hl->stok }} <sub>kg</sub></h6>
-                            <a class="read-more">{{ $hl->status }}</a>
+                <ul class="work">
+                    <li class="filter" data-filter="all">all</li>
+                    @foreach ($kategori as $k)
+                    <li class="filter" data-filter=".kategori{{ $k->id }}">{{ $k->nama }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            <div class="work-inner">
+                <div class="row work-posts">
+                    <!-- START SINGLE WORK DESIGN AREA -->
+                    @foreach ($hasillaut as $hl)
+                    <div class="col-md-4 col-sm-4 mix kategori{{ $hl->kategori_id }}">
+                        <div class="item wow fadeInUp single-blog-content" data-wow-delay="0.2s">
+                            <div class="single-blog">
+                            <div class="blog-description text-center">
+                                <a><h4>{{ $hl->nama }}</h4></a>
+                                <img src="{{ asset('admin/mophy.dexignzone.com/xhtml/images/product') }}/{{ $hl->gambar }}" alt="">
+                                <p>{{ $hl->kategori->nama }}</p>
+                                <h6>Stok: {{ $hl->stok }} <sub>kg</sub></h6>
+                                <a class="read-more">{{ $hl->status }}</a>
+                            </div>
+                        </div>
                         </div>
                     </div>
+                    @endforeach
+                    <!-- END SINGLE WORK DESIGN AREA -->
                 </div>
-                @endforeach
-                <!-- / END SINGLE BLOG DESIGN AREA -->
-
-                <!-- / END SINGLE BLOG DESIGN AREA -->
             </div>
         </div>
     </section>
-    <!-- / END BLOG DESIGN AREA -->
 
     <!-- START FOOTER DESIGN AREA -->
     <footer class="footer-area wow fadeInUp" data-wow-delay="1s">
@@ -170,7 +177,7 @@
     <!-- / END SCROOL UP DESIGN AREA -->
 
     <!-- LATEST JQUERY -->
-    <script type="text/javascript" src="{{ asset('home') }}//ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+    <script type="text/javascript" src="{{ asset('home') }}/ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
     <!-- BOOTSTRAP JS -->
     <script src="{{ asset('home/demo.dueza.com/spicy-html/spicy/black-color') }}/assets/bootstrap/js/bootstrap.min.js"></script>
     <!-- PROGRESS JS  -->

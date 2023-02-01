@@ -77,7 +77,9 @@ Scripts
 <!-- Datatable -->
 <script src="{{ asset('admin/mophy.dexignzone.com/xhtml') }}/vendor/datatables/js/jquery.dataTables.min.js"></script>
 <script src="{{ asset('admin/mophy.dexignzone.com/xhtml') }}/js/plugins-init/datatables.init.js"></script>
-
+<!-- Chart ChartJS plugin files -->
+<script src="{{ asset('admin/mophy.dexignzone.com/xhtml') }}/vendor/chart.js/Chart.bundle.min.js"></script>
+<script src="{{ asset('admin/mophy.dexignzone.com/xhtml') }}/js/plugins-init/chartjs-init.js"></script>
 <script>
 function carouselReview(){
     /*  testimonial one function by = owl.carousel.js */
