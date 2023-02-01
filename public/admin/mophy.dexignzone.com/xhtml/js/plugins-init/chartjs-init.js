@@ -704,8 +704,8 @@
 
 					}],
 					labels: [
-						"Pengeluaran",
 						"Pemasukan",
+						"Pengeluaran",
                         "Pemesanan",
 					]
 				},
