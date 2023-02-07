@@ -30,9 +30,10 @@
                                         <td>{{ $p->tanggal_keluar }}</td>
                                         <td>{{ $p->nama_pembeli }}</td>
                                         <td>{{ $p->status }}</td>
-                                        <td><button type="button" class="btn btn-rounded btn-warning"><span
+                                        <td><button type="button" class="btn btn-rounded btn-warning" data-bs-toggle="modal" data-bs-target="#cetakStruk"><span
                                             class="btn-icon-start text-warning"><i class="fa fa-download color-warning"></i>
-                                        </span>Download</button></td>
+                                        </span>Cetak</button></td>
+                                        @include('cetak_struk.modal.info')
                                     </tr>
                                     @endforeach
                                 </tbody>
@@ -44,4 +45,5 @@
         </div>
     </div>
 </div>
+
 @include('dashboard.layout.footer')

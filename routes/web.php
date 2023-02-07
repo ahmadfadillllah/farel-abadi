@@ -60,7 +60,6 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function(){
     Route::get('/pemesanan/tunai/{id}', [PemesananController::class, 'tunai'])->name('pemesanan.tunai');
 
     Route::get('/cetak_struk', [CetakStrukController::class, 'index'])->name('cetakstruk.index');
-    Route::get('/cetak_struk/show/{id}', [CetakStrukController::class, 'show'])->name('cetakstruk.show');
 
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
     Route::post('/profile/change_information', [ProfileController::class, 'change_information'])->name('profile.change_information');

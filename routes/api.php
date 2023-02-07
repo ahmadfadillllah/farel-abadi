@@ -3,6 +3,7 @@
 use App\Http\Controllers\PemesananController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CetakStrukController;
 
 
 /*
@@ -21,3 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/pemesanan/show', [PemesananController::class, 'show_data'])->name('pemesanan.show_data');
+Route::get('/cetak_struk/show', [CetakStrukController::class, 'show'])->name('cetakstruk.show');
