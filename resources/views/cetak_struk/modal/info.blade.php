@@ -41,7 +41,7 @@
 				data: {pengeluaran_id: pengeluaran_id},
 				success: function(data){
                     // console.log(data);
-                    var printer = new Recta('1085033411', '1811');
+                    var printer = new Recta('1287972841', '1811');
                     var date = new Date();
                     var months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
                     var day = date.getDate();
