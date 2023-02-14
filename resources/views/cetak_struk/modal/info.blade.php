@@ -64,6 +64,7 @@ function showStruk(idPengeluaran, namaPengeluaran) {
                     .text(data[0].map(element => {
                     element.hasillaut.nama + '       '+ convertToRupiah(element.total);
                     element.banyaknya + ' x ' + convertToRupiah(element.harga);
+                    document.write("\n");
                     }))
                     .align('center')
                     .text('--------------------------')
