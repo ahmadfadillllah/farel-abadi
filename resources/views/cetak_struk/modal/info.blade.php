@@ -1,4 +1,4 @@
-<div class="modal fade" id="cetakStruk" aria-hidden="true" aria-labelledby="..." tabindex="-1">
+<div class="modal fade" id="cetakStruk{{ $p->id }}" aria-hidden="true" aria-labelledby="..." tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-body text-center p-5">
@@ -32,6 +32,7 @@
 function showStruk(idPengeluaran, namaPengeluaran) {
         var pengeluaran_id = idPengeluaran;
         var namaPembeli = namaPengeluaran;
+        console.log(namaPembeli);
         $.ajax({
             headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
