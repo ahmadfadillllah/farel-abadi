@@ -32,7 +32,6 @@
 function showStruk(idPengeluaran, namaPengeluaran) {
         var pengeluaran_id = idPengeluaran;
         var namaPembeli = namaPengeluaran;
-        console.log(namaPembeli);
         $.ajax({
             headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -50,7 +49,6 @@ function showStruk(idPengeluaran, namaPengeluaran) {
                 var yy = date.getYear();
                 var year = (yy < 1000) ? yy + 1900 : yy;
 
-
                 printer.open().then(function () {
                 printer
                     .align('center')
@@ -62,11 +60,26 @@ function showStruk(idPengeluaran, namaPengeluaran) {
                     .bold(true)
                     .text('\nTRANSAKSI:')
                     .bold(false)
-                    .text(data[0].map(element => {
-                    element.hasillaut.nama + '       '+ convertToRupiah(element.total);
-                    element.banyaknya + ' x ' + convertToRupiah(element.harga);
-                    document.write("\n");
-                    }))
+                    .text(data[0][1].hasillaut.nama + '       '+ convertToRupiah(data[0].total))
+                    .text(data[0][1].banyaknya + ' x ' + convertToRupiah(data[0].harga))
+                    .text(data[0][2].hasillaut.nama + '       '+ convertToRupiah(data[0].total))
+                    .text(data[0][2].banyaknya + ' x ' + convertToRupiah(data[0].harga))
+                    .text(data[0][3].hasillaut.nama + '       '+ convertToRupiah(data[0].total))
+                    .text(data[0][3].banyaknya + ' x ' + convertToRupiah(data[0].harga))
+                    .text(data[0][4].hasillaut.nama + '       '+ convertToRupiah(data[0].total))
+                    .text(data[0][4].banyaknya + ' x ' + convertToRupiah(data[0].harga))
+                    .text(data[0][5].hasillaut.nama + '       '+ convertToRupiah(data[0].total))
+                    .text(data[0][5].banyaknya + ' x ' + convertToRupiah(data[0].harga))
+                    .text(data[0][6].hasillaut.nama + '       '+ convertToRupiah(data[0].total))
+                    .text(data[0][6].banyaknya + ' x ' + convertToRupiah(data[0].harga))
+                    .text(data[0][7].hasillaut.nama + '       '+ convertToRupiah(data[0].total))
+                    .text(data[0][7].banyaknya + ' x ' + convertToRupiah(data[0].harga))
+                    .text(data[0][8].hasillaut.nama + '       '+ convertToRupiah(data[0].total))
+                    .text(data[0][8].banyaknya + ' x ' + convertToRupiah(data[0].harga))
+                    .text(data[0][9].hasillaut.nama + '       '+ convertToRupiah(data[0].total))
+                    .text(data[0][9].banyaknya + ' x ' + convertToRupiah(data[0].harga))
+                    .text(data[0][10].hasillaut.nama + '       '+ convertToRupiah(data[0].total))
+                    .text(data[0][10].banyaknya + ' x ' + convertToRupiah(data[0].harga))
                     .align('center')
                     .text('--------------------------')
                     .align('left')
