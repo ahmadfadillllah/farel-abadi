@@ -16,11 +16,20 @@ class CetakStrukController extends Controller
         $struk = Pengeluaran::with('hasillaut', 'pemesanan')->where('status', 'Success')->get();
         // dd($struk);
         return view('cetak_struk.index', compact('struk'));
+
     }
 
     public function show(Request $request)
     {
         $struk = Pemesanan::with('hasillaut', 'pengeluaran')->where('pengeluaran_id', $request->query('pengeluaran_id'))->get();
-        return response()->json($struk, 200);
+
+        $total = $struk->sum('total');
+
+        if($total == NULL){
+            $total = 1;
+        }else{
+            $total = $struk->sum('total');
+        }
+        return response()->json([$struk, $total], 200);
     }
 }
